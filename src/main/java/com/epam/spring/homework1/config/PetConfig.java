@@ -2,11 +2,15 @@ package com.epam.spring.homework1.config;
 
 
 import com.epam.spring.homework1.pet.Cheetah;
+import com.epam.spring.homework1.pet.Spider;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
+import org.springframework.stereotype.Component;
 
 @Configuration
-@ComponentScan("com.epam.spring.homework1.pet")
+@ComponentScan(basePackages = "com.epam.spring.homework1.pet", excludeFilters =    @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,value = Spider.class))
+
+
 public class PetConfig {
 
 
